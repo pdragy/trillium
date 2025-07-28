@@ -13,6 +13,8 @@
 
 import util from "util";
 
+import { WritableStream } from 'web-streams-polyfill';
+
 import setImmediate from "@foxglove/studio-base/util/setImmediate";
 
 process.env.WASM_LZ4_ENVIRONMENT = "NODE";
@@ -34,6 +36,7 @@ if (typeof window !== "undefined") {
 }
 
 global.TextEncoder = util.TextEncoder;
+global.WritableStream = WritableStream;
 
 // React available everywhere (matches webpack config)
 global.React = require("react");
