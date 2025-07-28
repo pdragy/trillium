@@ -2898,6 +2898,7 @@ __metadata:
     sanitize-html: 2.12.1
     seedrandom: 3.0.5
     shallowequal: 1.1.0
+    show-open-file-picker: 0.4.0
     string-hash: 1.1.3
     string-replace-loader: 3.1.0
     style-loader: 3.3.4
@@ -2912,6 +2913,7 @@ __metadata:
     use-debounce: 10.0.0
     use-immer: 0.9.0
     uuid: 9.0.1
+    web-streams-polyfill: 4.1.0
     webpack: 5.88.2
     zustand: 4.5.5
   languageName: unknown
@@ -21083,6 +21085,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"show-open-file-picker@npm:0.4.0":
+  version: 0.4.0
+  resolution: "show-open-file-picker@npm:0.4.0"
+  checksum: 0535987e49ce1753e50eac196a7435967165682c8d8c0837773111cc0990564dc51baea581dd821b9787e4844768a3f76ee56f6af1865216f4b8cc2a2ac11c07
+  languageName: node
+  linkType: hard
+
 "side-channel-list@npm:^1.0.0":
   version: 1.0.0
   resolution: "side-channel-list@npm:1.0.0"
@@ -23609,6 +23618,13 @@ __metadata:
   version: 2.0.1
   resolution: "web-namespaces@npm:2.0.1"
   checksum: b6d9f02f1a43d0ef0848a812d89c83801d5bbad57d8bb61f02eb6d7eb794c3736f6cc2e1191664bb26136594c8218ac609f4069722c6f56d9fc2d808fa9271c6
+  languageName: node
+  linkType: hard
+
+"web-streams-polyfill@npm:4.1.0":
+  version: 4.1.0
+  resolution: "web-streams-polyfill@npm:4.1.0"
+  checksum: bce16f6bcca895439131fb21e4df15659a34d6f31fedd34b1680ab4fe9c438e02aabd336e4641eb1821e04a8da38dd03c6219fa8ca149ee9a002858a0d32f90d
   languageName: node
   linkType: hard
 

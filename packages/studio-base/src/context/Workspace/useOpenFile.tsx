@@ -4,12 +4,12 @@
 
 import path from "path";
 import { useCallback, useMemo } from "react";
+import { showOpenFilePicker } from 'show-open-file-picker';
 
 import {
   IDataSourceFactory,
   usePlayerSelection,
 } from "@foxglove/studio-base/context/PlayerSelectionContext";
-import showOpenFilePicker from "@foxglove/studio-base/util/showOpenFilePicker";
 
 export function useOpenFile(sources: readonly IDataSourceFactory[]): () => Promise<void> {
   const { selectSource } = usePlayerSelection();

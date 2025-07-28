@@ -169,16 +169,22 @@ export default function PlayerManager(props: PropsWithChildren<PlayerManagerProp
               constructPlayers(newPlayer);
               return;
             } else if (handle) {
-              const permission = await handle.queryPermission({ mode: "read" });
-              if (!isMounted()) {
-                return;
-              }
-
-              if (permission !== "granted") {
-                const newPerm = await handle.requestPermission({ mode: "read" });
-                if (newPerm !== "granted") {
-                  throw new Error(`Permission denied: ${handle.name}`);
+              // Workaround, disable "addRecent" for local files on Firefox
+              // and other browsers which don't fully support filesystem access
+              let fileAccessLocalSupported = true;
+              try {
+                const permission = await handle.queryPermission({ mode: "read" });
+                if (!isMounted()) {
+                  return;
                 }
+                if (permission !== "granted") {
+                  const newPerm = await handle.requestPermission({ mode: "read" });
+                  if (newPerm !== "granted") {
+                    throw new Error(`Permission denied: ${handle.name}`);
+                  }
+                }
+              } catch (e) {
+                fileAccessLocalSupported = false;
               }
 
               const file = await handle.getFile();
@@ -191,6 +197,10 @@ export default function PlayerManager(props: PropsWithChildren<PlayerManagerProp
               });
 
               constructPlayers(newPlayer);
+              if (!fileAccessLocalSupported) {
+                return;
+              }
+
               addRecent({
                 type: "file",
                 title: handle.name,

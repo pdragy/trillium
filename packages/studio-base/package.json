@@ -150,6 +150,7 @@
     "sanitize-html": "2.12.1",
     "seedrandom": "3.0.5",
     "shallowequal": "1.1.0",
+    "show-open-file-picker": "0.4.0",
     "string-hash": "1.1.3",
     "string-replace-loader": "3.1.0",
     "style-loader": "3.3.4",
@@ -164,6 +165,7 @@
     "use-debounce": "10.0.0",
     "use-immer": "0.9.0",
     "uuid": "9.0.1",
+    "web-streams-polyfill": "4.1.0",
     "webpack": "5.88.2",
     "zustand": "4.5.5"
   }

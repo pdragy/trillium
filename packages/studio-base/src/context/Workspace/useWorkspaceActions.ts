@@ -6,6 +6,7 @@ import { Draft, produce } from "immer";
 import * as _ from "lodash-es";
 import { Dispatch, SetStateAction, useCallback, useMemo } from "react";
 import { useMountedState } from "react-use";
+import { showOpenFilePicker } from 'show-open-file-picker';
 
 import { useGuaranteedContext } from "@foxglove/hooks";
 import { AppSettingsTab } from "@foxglove/studio-base/components/AppSettingsDialog/AppSettingsDialog";
@@ -136,7 +137,12 @@ export function useWorkspaceActions(): WorkspaceActions {
       return;
     }
 
-    const file = await fileHandles[0].getFile();
+    const fh = fileHandles[0];
+    if (!fh) {
+      return;
+    }
+
+    const file = await fh.getFile();
     const content = await file.text();
 
     if (!isMounted()) {
