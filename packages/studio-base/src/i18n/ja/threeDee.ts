@@ -57,6 +57,10 @@ export const threeDee: Partial<TypeOptions["resources"]["threeDee"]> = {
   meshUpAxis: "メッシュの上軸",
   meshUpAxisHelp:
     "方向を使用してメッシュを読み込むときに '上' として使用する方向（STL および OBJ）",
+  reverseMouse: "マウスを逆にする",
+  reverseMouseHelp: "マウスを逆にする",
+  lockPanning: "XYパンをロック",
+  lockPanningHelp: "XYパンをロック",
   renderStats: "レンダリングの統計情報",
   scene: "シーン",
   takeEffectAfterReboot: "この設定は再起動後に有効になります。",

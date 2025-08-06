@@ -83,6 +83,18 @@ export class SceneSettings extends SceneExtension {
             ? t("threeDee:takeEffectAfterReboot")
             : undefined,
       },
+      reverseMouse: {
+        label: t("threeDee:reverseMouse"),
+        help: t("threeDee:reverseMouseHelp"),
+        input: "boolean",
+        value: config.scene.reverseMouse,
+      },
+      lockPanning: {
+        label: t("threeDee:lockPanning"),
+        help: t("threeDee:lockPanningHelp"),
+        input: "boolean",
+        value: config.scene.lockPanning,
+      },
     };
 
     if (process.env.NODE_ENV === "production") {
@@ -133,6 +145,8 @@ export class SceneSettings extends SceneExtension {
       } else if (path[1] === "labelScaleFactor") {
         const labelScaleFactor = value as number | undefined;
         this.renderer.labelPool.setScaleFactor(labelScaleFactor ?? DEFAULT_LABEL_SCALE_FACTOR);
+      } else if (path[1] === "reverseMouse" || path[1] === "lockPanning") {
+        this.renderer.updateControls();
       }
     } else {
       return;

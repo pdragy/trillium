@@ -918,6 +918,10 @@ export class Renderer extends EventEmitter<RendererEvents> implements IRenderer 
     return this.cameraHandler.getCameraState();
   }
 
+  public updateControls(): void {
+      return this.cameraHandler.updateControls();
+  }
+
   public canResetView(): boolean {
     return this.#imageModeExtension?.hasModifiedView() ?? false;
   }
