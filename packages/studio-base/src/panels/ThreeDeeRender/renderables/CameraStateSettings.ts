@@ -84,11 +84,8 @@ export class CameraStateSettings extends SceneExtension implements ICameraHandle
     this.add(this.#cameraGroup);
 
     this.#controls = new OrbitControls(this.#perspectiveCamera, this.#canvas);
-    this.#controls.screenSpacePanning = false; // only allow panning in the XY plane
-    this.#controls.mouseButtons.LEFT = THREE.MOUSE.PAN;
-    this.#controls.mouseButtons.RIGHT = THREE.MOUSE.ROTATE;
-    this.#controls.touches.ONE = THREE.TOUCH.PAN;
-    this.#controls.touches.TWO = THREE.TOUCH.DOLLY_ROTATE;
+    this.updateControls();
+
     this.#controls.addEventListener("change", () => {
       if (!this.#isUpdatingCameraState) {
         renderer.emit("cameraMove", renderer);
@@ -491,6 +488,27 @@ export class CameraStateSettings extends SceneExtension implements ICameraHandle
       near: config.cameraState.near,
       far: config.cameraState.far,
     };
+  }
+
+  public updateControls(): void {
+    this.#isUpdatingCameraState = true;
+    if (this.renderer.config.scene.lockPanning ?? false) {
+      this.#controls.screenSpacePanning = false;
+    } else {
+      this.#controls.screenSpacePanning = true;
+    }
+    if (this.renderer.config.scene.reverseMouse ?? false) {
+      this.#controls.mouseButtons.LEFT = THREE.MOUSE.PAN;
+      this.#controls.mouseButtons.RIGHT = THREE.MOUSE.ROTATE;
+      this.#controls.touches.ONE = THREE.TOUCH.PAN;
+      this.#controls.touches.TWO = THREE.TOUCH.DOLLY_ROTATE;
+    } else {
+      this.#controls.mouseButtons.LEFT = THREE.MOUSE.ROTATE;
+      this.#controls.mouseButtons.RIGHT = THREE.MOUSE.PAN;
+      this.#controls.touches.ONE = THREE.TOUCH.ROTATE;
+      this.#controls.touches.TWO = THREE.TOUCH.DOLLY_PAN;
+    }
+    this.#isUpdatingCameraState = false;
   }
 
   public setCameraState(cameraState: CameraState): void {

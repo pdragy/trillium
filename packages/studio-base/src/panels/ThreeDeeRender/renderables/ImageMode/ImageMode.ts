@@ -944,6 +944,10 @@ export class ImageMode
     return undefined;
   }
 
+  public updateControls(): undefined {
+    return undefined;
+  }
+
   #handleErrorChange = (): void => {
     this.updateSettingsTree();
   };

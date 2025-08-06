@@ -54,6 +54,12 @@ export const threeDee = {
   meshUpAxis: "Mesh up axis",
   meshUpAxisHelp:
     "The direction to use as “up” when loading meshes without orientation info (STL and OBJ)",
+  reverseMouse: "Reverse mouse buttons",
+  reverseMouseHelp:
+    "Reverse left and right mouse buttons for pan and rotate 3D control",
+  lockPanning: "Lock XY panning",
+  lockPanningHelp:
+    "Only allow panning on the XY plane",
   renderStats: "Render stats",
   scene: "Scene",
   takeEffectAfterReboot: "This setting requires a restart to take effect",

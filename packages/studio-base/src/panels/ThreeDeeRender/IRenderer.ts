@@ -117,6 +117,10 @@ export type RendererConfig = {
     /** Ignore the <up_axis> tag in COLLADA files (matching rviz behavior) */
     ignoreColladaUpAxis?: boolean;
     meshUpAxis?: MeshUpAxis;
+    /** Reverse the mouse controls (matching rviz behavior) */
+    reverseMouse?: boolean;
+    /** Lock panning to XY plane only */
+    lockPanning?: boolean;
     transforms?: {
       /** Toggles translation and rotation offset controls for frames */
       editable?: boolean;
@@ -331,6 +335,8 @@ export interface IRenderer extends EventEmitter<RendererEvents> {
   setCameraState(cameraState: CameraState): void;
 
   getCameraState(): CameraState | undefined;
+
+  updateControls(): void;
 
   /** Whether the view has been modified and a reset button should be shown (image mode only). */
   canResetView(): boolean;
