@@ -14,7 +14,6 @@
 import { Link } from "@mui/material";
 import { PropsWithChildren, CSSProperties, useCallback, useContext } from "react";
 import Markdown from "react-markdown";
-import rehypeRaw from "rehype-raw";
 import { makeStyles } from "tss-react/mui";
 
 import LinkHandlerContext from "@foxglove/studio-base/context/LinkHandlerContext";
@@ -189,7 +188,8 @@ export default function TextContent(
     <div className={classes.root} style={style}>
       {typeof children === "string" ? (
         <Markdown
-          rehypePlugins={allowMarkdownHtml === true ? [rehypeRaw] : []}
+          //rehypePlugins={allowMarkdownHtml === true ? [rehypeRaw] : []}
+          rehypePlugins={allowMarkdownHtml === true ? [] : []}
           components={{ a: linkRenderer }}
         >
           {children}

@@ -311,7 +311,6 @@ export default function PanelSetup(props: Props): JSX.Element {
   const theme = useTheme();
   return (
     <WorkspaceContextProvider disablePersistenceForStorybook>
-<<<<<<< HEAD
       <TimelineInteractionStateProvider>
         <MockCurrentLayoutProvider onAction={props.onLayoutAction}>
           <PanelStateContextProvider initialState={props.fixture?.panelState}>

@@ -25,7 +25,7 @@ import { makeStyles } from "tss-react/mui";
 
 import { AppSetting } from "@foxglove/studio-base";
 import CopyButton from "@foxglove/studio-base/components/CopyButton";
-import { ExperimentalFeatureSettings } from "@foxglove/studio-base/components/ExperimentalFeatureSettings";
+//import { ExperimentalFeatureSettings } from "@foxglove/studio-base/components/ExperimentalFeatureSettings";
 import ExtensionsSettings from "@foxglove/studio-base/components/ExtensionsSettings";
 import Stack from "@foxglove/studio-base/components/Stack";
 import { useAppContext } from "@foxglove/studio-base/context/AppContext";
@@ -200,14 +200,7 @@ export function AppSettingsDialog(
           onChange={handleTabChange}
         >
           <Tab className={classes.tab} label={t("general")} value="general" />
-<<<<<<< HEAD
-          {extensionSettings && (
-            <Tab className={classes.tab} label={t("extensions")} value="extensions" />
-          )}
-=======
-          <Tab className={classes.tab} label={t("privacy")} value="privacy" />
           <Tab className={classes.tab} label={t("extensions")} value="extensions" />
->>>>>>> parent of 1a454e333 (Remove unused ExtensionDetail and ExtensionSettings components (#7109))
           <Tab
             className={classes.tab}
             label={t("experimentalFeatures")}

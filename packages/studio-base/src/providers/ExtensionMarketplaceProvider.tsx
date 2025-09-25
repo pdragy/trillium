@@ -10,7 +10,8 @@ import ExtensionMarketplaceContext, {
 } from "@foxglove/studio-base/context/ExtensionMarketplaceContext";
 
 const MARKETPLACE_URL =
-  "https://raw.githubusercontent.com/foxglove/studio-extension-marketplace/main/extensions.json";
+  "https://raw.githubusercontent.com/pdragy/trillium-extensions/refs/heads/main/extensions.json";
+  //"https://raw.githubusercontent.com/foxglove/studio-extension-marketplace/main/extensions.json";
 
 export default function ExtensionMarketplaceProvider({
   children,

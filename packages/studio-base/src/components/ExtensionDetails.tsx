@@ -12,14 +12,11 @@ import { makeStyles } from "tss-react/mui";
 import { Immutable } from "@foxglove/studio";
 import Stack from "@foxglove/studio-base/components/Stack";
 import TextContent from "@foxglove/studio-base/components/TextContent";
-import { useAnalytics } from "@foxglove/studio-base/context/AnalyticsContext";
 import { useExtensionCatalog } from "@foxglove/studio-base/context/ExtensionCatalogContext";
 import {
   ExtensionMarketplaceDetail,
   useExtensionMarketplace,
 } from "@foxglove/studio-base/context/ExtensionMarketplaceContext";
-import { AppEvent } from "@foxglove/studio-base/services/IAnalytics";
-import isDesktopApp from "@foxglove/studio-base/util/isDesktopApp";
 
 type Props = {
   installed: boolean;
@@ -61,16 +58,7 @@ export function ExtensionDetails({ extension, onClose, installed }: Props): Reac
     [marketplace, changelogUrl],
   );
 
-  const analytics = useAnalytics();
-
   const install = useCallback(async () => {
-    if (!isDesktopApp()) {
-      enqueueSnackbar("Download the desktop app to use marketplace extensions.", {
-        variant: "error",
-      });
-      return;
-    }
-
     const url = extension.foxe;
     try {
       if (url == undefined) {
@@ -80,7 +68,6 @@ export function ExtensionDetails({ extension, onClose, installed }: Props): Reac
       await installExtension("local", data);
       if (isMounted()) {
         setIsInstalled(true);
-        void analytics.logEvent(AppEvent.EXTENSION_INSTALL, { type: extension.id });
       }
     } catch (err) {
       enqueueSnackbar(`Failed to download extension ${extension.id}. ${err.message}`, {
@@ -88,7 +75,6 @@ export function ExtensionDetails({ extension, onClose, installed }: Props): Reac
       });
     }
   }, [
-    analytics,
     downloadExtension,
     enqueueSnackbar,
     extension.foxe,
@@ -101,9 +87,8 @@ export function ExtensionDetails({ extension, onClose, installed }: Props): Reac
     await uninstallExtension(extension.namespace ?? "local", extension.id);
     if (isMounted()) {
       setIsInstalled(false);
-      void analytics.logEvent(AppEvent.EXTENSION_UNINSTALL, { type: extension.id });
     }
-  }, [analytics, extension.id, extension.namespace, isMounted, uninstallExtension]);
+  }, [extension.id, extension.namespace, isMounted, uninstallExtension]);
 
   return (
     <Stack fullHeight flex="auto" gap={1}>

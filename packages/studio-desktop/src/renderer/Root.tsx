@@ -19,6 +19,7 @@ import {
   SampleNuscenesDataSourceFactory,
   UlogLocalDataSourceFactory,
   OsContext,
+  IdbExtensionLoader,
 } from "@foxglove/studio-base";
 
 import { Desktop, Storage } from "../common/types";
@@ -57,6 +58,11 @@ export default function Root(props: {
       appConfiguration.removeChangeListener(AppSetting.LANGUAGE, handler);
     };
   }, [appConfiguration]);
+
+  const [extensionLoaders] = useState(() => [
+    new IdbExtensionLoader("org"),
+    new IdbExtensionLoader("local"),
+  ]);
 
   const dataSources: IDataSourceFactory[] = useMemo(() => {
     if (props.dataSources) {
@@ -116,6 +122,7 @@ export default function Root(props: {
         dataSources={dataSources}
         appConfiguration={appConfiguration}
         enableGlobalCss
+        extensionLoaders={extensionLoaders}
         appBarLeftInset={ctxbridge?.platform === "darwin" && !isFullScreen ? 72 : undefined}
         extraProviders={props.extraProviders}
             >

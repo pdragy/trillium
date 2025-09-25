@@ -38,8 +38,8 @@ export function StudioApp(): JSX.Element {
   const {
     dataSources,
     extensionLoaders,
-    nativeAppMenu,
-    nativeWindow,
+    //nativeAppMenu,
+    //nativeWindow,
     deepLinks,
     enableLaunchPreferenceScreen,
     extraProviders,
@@ -55,7 +55,6 @@ export function StudioApp(): JSX.Element {
     <CurrentLayoutProvider />,
     <ExtensionMarketplaceProvider />,
     <ExtensionCatalogProvider loaders={extensionLoaders} />,
-    <UserScriptStateProvider />,
     <PlayerManager playerSources={dataSources} />,
     <EventsProvider />,
     /* eslint-enable react/jsx-key */

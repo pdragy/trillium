@@ -80,10 +80,10 @@ export default function PlayerManager(props: PropsWithChildren<PlayerManagerProp
 
     // We only want to set alias functions on the player when the functions have changed
     let topicAliasFunctions =
-      extensionCatalogContext.getState().installedTopicAliasFunctions ?? emptyAliasFunctions;
+      extensionCatalogContext?.getState().installedTopicAliasFunctions ?? emptyAliasFunctions;
     playerInstances?.topicAliasPlayer.setAliasFunctions(topicAliasFunctions);
 
-    return extensionCatalogContext.subscribe((state) => {
+    return extensionCatalogContext?.subscribe((state) => {
       if (topicAliasFunctions !== state.installedTopicAliasFunctions) {
         topicAliasFunctions = state.installedTopicAliasFunctions ?? emptyAliasFunctions;
         playerInstances?.topicAliasPlayer.setAliasFunctions(topicAliasFunctions);
