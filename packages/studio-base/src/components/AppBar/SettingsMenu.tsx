@@ -14,7 +14,6 @@ import { useTranslation } from "react-i18next";
 import { makeStyles } from "tss-react/mui";
 
 import { AppSettingsTab } from "@foxglove/studio-base/components/AppSettingsDialog/AppSettingsDialog";
-import { useAppContext } from "@foxglove/studio-base/context/AppContext";
 import { useWorkspaceActions } from "@foxglove/studio-base/context/Workspace/useWorkspaceActions";
 
 const useStyles = makeStyles()({
@@ -43,7 +42,6 @@ export function SettingsMenu({
   const { classes } = useStyles();
   const { t } = useTranslation("appBar");
 
-  const { extensionSettings } = useAppContext();
   const { dialogActions } = useWorkspaceActions();
 
   const onSettingsClick = useCallback(
@@ -78,15 +76,13 @@ export function SettingsMenu({
         >
           {t("settings")}
         </MenuItem>
-        {extensionSettings && (
-          <MenuItem
-            onClick={() => {
-              onSettingsClick("extensions");
-            }}
-          >
-            {t("extensions")}
-          </MenuItem>
-        )}
+        <MenuItem
+          onClick={() => {
+            onSettingsClick("extensions");
+          }}
+        >
+          {t("extensions")}
+        </MenuItem>
       </Menu>
     </>
   );
