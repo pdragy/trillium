@@ -15,8 +15,6 @@ interface ISharedRootContext {
   appConfiguration?: IAppConfiguration;
   dataSources: IDataSourceFactory[];
   extensionLoaders: readonly ExtensionLoader[];
-  nativeAppMenu?: INativeAppMenu;
-  nativeWindow?: INativeWindow;
   enableLaunchPreferenceScreen?: boolean;
   enableGlobalCss?: boolean;
   appBarLeftInset?: number;

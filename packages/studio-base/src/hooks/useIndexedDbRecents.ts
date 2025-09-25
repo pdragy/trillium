@@ -86,12 +86,16 @@ function useIndexedDbRecents(): IRecentsStore {
 
         // Filter file recents to ignore any previous recent that match this record.
         // This happens if we want to add a file to recents that we already have
-        if (
-          savedRecent.type === "file" &&
-          newRecent.type === savedRecent.type &&
-          (await savedRecent.handle.isSameEntry(newRecent.handle))
-        ) {
-          exists = true;
+        try {
+          if (
+            savedRecent.type === "file" &&
+            newRecent.type === savedRecent.type &&
+            (await savedRecent.handle.isSameEntry(newRecent.handle))
+          ) {
+            exists = true;
+          }
+        } catch (error) {
+            exists = true;
         }
 
         // Filter connection recents which match the same sourceId and extra args
