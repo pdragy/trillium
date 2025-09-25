@@ -25,6 +25,8 @@ import { makeStyles } from "tss-react/mui";
 
 import { AppSetting } from "@foxglove/studio-base";
 import CopyButton from "@foxglove/studio-base/components/CopyButton";
+import { ExperimentalFeatureSettings } from "@foxglove/studio-base/components/ExperimentalFeatureSettings";
+import ExtensionsSettings from "@foxglove/studio-base/components/ExtensionsSettings";
 import Stack from "@foxglove/studio-base/components/Stack";
 import { useAppContext } from "@foxglove/studio-base/context/AppContext";
 import {
@@ -180,6 +182,8 @@ export function AppSettingsDialog(
     }
   };
 
+  const extensionSettingsComponent = extensionSettings ?? <ExtensionsSettings />;
+
   return (
     <Dialog {...props} fullWidth maxWidth="md" data-testid={`AppSettingsDialog--${activeTab}`}>
       <DialogTitle className={classes.dialogTitle}>
@@ -196,9 +200,14 @@ export function AppSettingsDialog(
           onChange={handleTabChange}
         >
           <Tab className={classes.tab} label={t("general")} value="general" />
+<<<<<<< HEAD
           {extensionSettings && (
             <Tab className={classes.tab} label={t("extensions")} value="extensions" />
           )}
+=======
+          <Tab className={classes.tab} label={t("privacy")} value="privacy" />
+          <Tab className={classes.tab} label={t("extensions")} value="extensions" />
+>>>>>>> parent of 1a454e333 (Remove unused ExtensionDetail and ExtensionSettings components (#7109))
           <Tab
             className={classes.tab}
             label={t("experimentalFeatures")}
@@ -239,15 +248,13 @@ export function AppSettingsDialog(
             </Stack>
           </section>
 
-          {extensionSettings && (
-            <section
-              className={cx(classes.tabPanel, {
-                [classes.tabPanelActive]: activeTab === "extensions",
-              })}
-            >
-              <Stack gap={2}>{extensionSettings}</Stack>
-            </section>
-          )}
+          <section
+            className={cx(classes.tabPanel, {
+              [classes.tabPanelActive]: activeTab === "extensions",
+            })}
+          >
+            <Stack gap={2}>{extensionSettingsComponent}</Stack>
+          </section>
 
           <section
             className={cx(classes.tabPanel, { [classes.tabPanelActive]: activeTab === "about" })}
