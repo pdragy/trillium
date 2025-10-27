@@ -1,6 +1,6 @@
 {
   "name": "trillium",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Integrated robotics visualization and control.",
   "productName": "Trillium",
   "productDescription": "Trillium is a visualization and control tool for robotics.",
