@@ -7,7 +7,7 @@
     "@foxglove/studio-base": "workspace:*",
     "@foxglove/studio-desktop": "workspace:*",
     "@foxglove/tsconfig": "2.0.0",
-    "electron": "28.3.2",
+    "electron": "28.3.3",
     "playwright": "1.56.1",
     "webpack": "5.94.0"
   }
