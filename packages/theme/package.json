@@ -13,9 +13,9 @@
   "homepage": "https://foxglove.dev/",
   "main": "./src/index",
   "devDependencies": {
-    "@emotion/react": "11.11.3",
-    "@emotion/styled": "11.11.0",
-    "@fluentui/react-icons": "2.0.227",
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.1",
+    "@fluentui/react-icons": "2.0.313",
     "@foxglove/tsconfig": "2.0.0",
     "@mui/icons-material": "5.15.5",
     "@mui/lab": "5.0.0-alpha.165",
