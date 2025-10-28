@@ -24,6 +24,9 @@ const storybookConfig: StorybookConfig = {
       legacyRootApi: true,
     },
   },
+  core: {
+    disableTelemetry: true,
+  },
   // Carefully merge our main webpack config with the Storybook default config.
   // For the most part, our webpack config has already been designed to handle
   // all the imports and edge cases we need to support. However, at least some of

@@ -25,6 +25,7 @@ jobs:
     - name: Build
       run: |
         corepack enable
+        yarn clean || true
         yarn
         yarn lint
         yarn lint:unused-exports
