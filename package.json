@@ -67,13 +67,13 @@
     "react-dnd": "patch:react-dnd@npm:16.0.1#./patches/react-dnd.patch"
   },
   "devDependencies": {
-    "@actions/core": "1.10.1",
+    "@actions/core": "1.11.1",
     "@actions/exec": "1.1.1",
-    "@actions/tool-cache": "2.0.1",
-    "@babel/core": "7.23.7",
-    "@babel/plugin-proposal-explicit-resource-management": "7.23.3",
-    "@babel/preset-env": "7.23.8",
-    "@babel/preset-typescript": "7.23.3",
+    "@actions/tool-cache": "2.0.2",
+    "@babel/core": "7.28.5",
+    "@babel/plugin-proposal-explicit-resource-management": "7.27.4",
+    "@babel/preset-env": "7.28.5",
+    "@babel/preset-typescript": "7.28.5",
     "@foxglove/eslint-plugin": "1.0.0",
     "@foxglove/eslint-plugin-studio": "workspace:*",
     "@foxglove/tsconfig": "2.0.0",
@@ -83,8 +83,8 @@
     "@storybook/addon-interactions": "7.6.20",
     "@storybook/react": "7.6.20",
     "@storybook/react-webpack5": "7.6.20",
-    "@types/babel__core": "^7.20.3",
-    "@types/babel__preset-env": "^7.9.6",
+    "@types/babel__core": "^7.20.5",
+    "@types/babel__preset-env": "^7.10.0",
     "@types/case-sensitive-paths-webpack-plugin": "2.1.9",
     "@types/jest": "29.5.12",
     "@types/license-checker": "^25.0.6",
@@ -114,7 +114,7 @@
     "jest-environment-jsdom": "29.7.0",
     "license-checker": "25.0.1",
     "prettier": "3.0.3",
-    "rimraf": "5.0.5",
+    "rimraf": "5.0.10",
     "semver": "7.5.4",
     "storybook": "7.6.20",
     "ts-node": "10.9.2",
@@ -124,6 +124,6 @@
     "webpack": "5.88.2",
     "webpack-cli": "5.1.4",
     "webpack-dev-server": "4.15.2",
-    "webpack-hot-middleware": "2.26.0"
+    "webpack-hot-middleware": "2.26.1"
   }
 }
