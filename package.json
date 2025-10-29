@@ -122,8 +122,8 @@
     "tslib": "2.6.2",
     "typescript": "5.2.2",
     "webpack": "5.88.2",
-    "webpack-cli": "5.1.4",
-    "webpack-dev-server": "4.15.2",
+    "webpack-cli": "6.0.1",
+    "webpack-dev-server": "5.2.2",
     "webpack-hot-middleware": "2.26.1"
   }
 }

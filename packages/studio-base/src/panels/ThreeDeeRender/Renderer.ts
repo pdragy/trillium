@@ -919,7 +919,7 @@ export class Renderer extends EventEmitter<RendererEvents> implements IRenderer 
   }
 
   public updateControls(): void {
-      return this.cameraHandler.updateControls();
+      this.cameraHandler.updateControls();
   }
 
   public canResetView(): boolean {
