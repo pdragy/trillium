@@ -28,7 +28,7 @@
     "async-mutex": "0.4.1",
     "builder-util": "*",
     "clean-webpack-plugin": "4.0.0",
-    "electron": "25.9.8",
+    "electron": "28.3.3",
     "electron-builder": "24.13.3",
     "electron-devtools-installer": "3.2.1",
     "electron-squirrel-startup": "1.0.1",
