@@ -34,7 +34,7 @@ export function webpackDevServerConfig(params: WebpackConfigParams): Configurati
         directory: params.outputPath,
       },
       devMiddleware: {
-        writeToDisk: (filePath) => {
+        writeToDisk: (filePath : string) => {
           // Electron needs to open the main thread source and preload source from disk
           // avoid writing the hot-update js and json files
           // allow writing package.json at root -> needed for electron to find entrypoint
