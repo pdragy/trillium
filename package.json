@@ -94,7 +94,7 @@
     "babel-plugin-transform-import-meta": "2.2.1",
     "cross-env": "7.0.3",
     "depcheck": "1.4.7",
-    "electron": "25.9.8",
+    "electron": "35.7.5",
     "electron-builder": "24.13.3",
     "eslint": "8.50.0",
     "eslint-config-prettier": "9.1.0",
@@ -121,7 +121,7 @@
     "ts-unused-exports": "10.0.1",
     "tslib": "2.6.2",
     "typescript": "5.2.2",
-    "webpack": "5.88.2",
+    "webpack": "5.94.0",
     "webpack-cli": "6.0.1",
     "webpack-dev-server": "5.2.2",
     "webpack-hot-middleware": "2.26.1"

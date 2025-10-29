@@ -28,7 +28,7 @@
     "async-mutex": "0.4.1",
     "builder-util": "*",
     "clean-webpack-plugin": "4.0.0",
-    "electron": "28.3.3",
+    "electron": "35.7.5",
     "electron-builder": "24.13.3",
     "electron-devtools-installer": "3.2.1",
     "electron-squirrel-startup": "1.0.1",
@@ -50,7 +50,7 @@
     "tinycolor2": "1.6.0",
     "tss-react": "4.9.2",
     "utif": "3.1.0",
-    "webpack": "5.88.2",
+    "webpack": "5.94.0",
     "webpack-dev-server": "5.2.2"
   }
 }
