@@ -4131,7 +4131,7 @@ __metadata:
     "@types/pngjs": ^6.0.5
     "@types/tinycolor2": 1.4.6
     "@types/utif": ^3.0.2
-    "@xmldom/xmldom": 0.8.12
+    "@xmldom/xmldom": 0.8.13
     app-builder-lib: "*"
     async-mutex: 0.4.1
     builder-util: "*"
@@ -9205,10 +9205,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@xmldom/xmldom@npm:0.8.12":
-  version: 0.8.12
-  resolution: "@xmldom/xmldom@npm:0.8.12"
-  checksum: 609bbcd6f31fa24023f5cc836e804d49c60e3df83ca73f744da9caff7fed516221dcf2f23de44e5289d715951781ec35fa90adf57008c3eae944a7550c39e325
+"@xmldom/xmldom@npm:0.8.13":
+  version: 0.8.13
+  resolution: "@xmldom/xmldom@npm:0.8.13"
+  checksum: b5568a3dee6306c4c6256c94f27d74f904d7cc923607f0dcaa37998e370361ce37a6e99aa55e8e725f07079e619a6f8b3a7de218e76b522ba2b1aca3ada5265c
   languageName: node
   linkType: hard
 
@@ -10382,9 +10382,9 @@ __metadata:
   linkType: hard
 
 "bn.js@npm:^4.0.0, bn.js@npm:^4.1.0, bn.js@npm:^4.11.9":
-  version: 4.12.0
-  resolution: "bn.js@npm:4.12.0"
-  checksum: 39afb4f15f4ea537b55eaf1446c896af28ac948fdcf47171961475724d1bb65118cca49fa6e3d67706e4790955ec0e74de584e45c8f1ef89f46c812bee5b5a12
+  version: 4.12.3
+  resolution: "bn.js@npm:4.12.3"
+  checksum: 0fb6455c6d56e3869589ad736cc2f5ed2b6229daa1af43e93bd373eb5e20bf0ae25b166087189bce9ba3b3f4d971e1b9a12ec6027e52eb182e5535e1494cadbb
   languageName: node
   linkType: hard
 
