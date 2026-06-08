@@ -14,9 +14,6 @@ export enum AppSetting {
   // ROS
   ROS_PACKAGE_PATH = "ros.ros_package_path",
 
-  // Experimental features
-  SHOW_DEBUG_PANELS = "showDebugPanels",
-
   // Miscellaneous
   HIDE_SIGN_IN_PROMPT = "hideSignInPrompt",
   LAUNCH_PREFERENCE = "launchPreference",
