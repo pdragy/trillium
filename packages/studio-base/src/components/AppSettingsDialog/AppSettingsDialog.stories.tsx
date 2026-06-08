@@ -159,22 +159,6 @@ export const ExtensionsJapanese: StoryObj = {
   parameters: { forceLanguage: "ja" },
 };
 
-export const Experimental: StoryObj = {
-  render: () => {
-    return <AppSettingsDialog open activeTab="experimental-features" />;
-  },
-};
-
-export const ExperimentalChinese: StoryObj = {
-  ...Experimental,
-  parameters: { forceLanguage: "zh" },
-};
-
-export const ExperimentalJapanese: StoryObj = {
-  ...Experimental,
-  parameters: { forceLanguage: "ja" },
-};
-
 export const About: StoryObj = {
   render: () => {
     return <AppSettingsDialog open activeTab="about" />;

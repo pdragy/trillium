@@ -5,13 +5,10 @@
 import CloseIcon from "@mui/icons-material/Close";
 import {
   Button,
-  Checkbox,
   Dialog,
   DialogActions,
   DialogProps,
   DialogTitle,
-  FormControlLabel,
-  FormLabel,
   IconButton,
   Link,
   Tab,
@@ -23,9 +20,7 @@ import { MouseEvent, SyntheticEvent, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { makeStyles } from "tss-react/mui";
 
-import { AppSetting } from "@foxglove/studio-base";
 import CopyButton from "@foxglove/studio-base/components/CopyButton";
-//import { ExperimentalFeatureSettings } from "@foxglove/studio-base/components/ExperimentalFeatureSettings";
 import ExtensionsSettings from "@foxglove/studio-base/components/ExtensionsSettings";
 import Stack from "@foxglove/studio-base/components/Stack";
 import { useAppContext } from "@foxglove/studio-base/context/AppContext";
@@ -33,7 +28,6 @@ import {
   useWorkspaceStore,
   WorkspaceContextStore,
 } from "@foxglove/studio-base/context/Workspace/WorkspaceContext";
-import { useAppConfigurationValue } from "@foxglove/studio-base/hooks";
 import isDesktopApp from "@foxglove/studio-base/util/isDesktopApp";
 
 import {
@@ -66,22 +60,12 @@ const useStyles = makeStyles()((theme) => ({
   tabPanelActive: {
     display: "block",
   },
-  checkbox: {
-    "&.MuiCheckbox-root": {
-      paddingTop: 0,
-    },
-  },
   dialogActions: {
     position: "sticky",
     backgroundColor: theme.palette.background.paper,
     borderTop: `${theme.palette.divider} 1px solid`,
     padding: theme.spacing(1),
     bottom: 0,
-  },
-  formControlLabel: {
-    "&.MuiFormControlLabel-root": {
-      alignItems: "start",
-    },
   },
   tab: {
     svg: {
@@ -150,7 +134,7 @@ const aboutItems = new Map<
   ],
 ]);
 
-export type AppSettingsTab = "general" | "extensions" | "experimental-features" | "about";
+export type AppSettingsTab = "general" | "extensions" | "about";
 
 const selectWorkspaceInitialActiveTab = (store: WorkspaceContextStore) =>
   store.dialogs.preferences.initialTab;
@@ -163,9 +147,6 @@ export function AppSettingsDialog(
   const initialActiveTab = useWorkspaceStore(selectWorkspaceInitialActiveTab);
   const [activeTab, setActiveTab] = useState<AppSettingsTab>(
     _activeTab ?? initialActiveTab ?? "general",
-  );
-  const [debugModeEnabled = false, setDebugModeEnabled] = useAppConfigurationValue<boolean>(
-    AppSetting.SHOW_DEBUG_PANELS,
   );
   const { classes, cx, theme } = useStyles();
   const smUp = useMediaQuery(theme.breakpoints.up("sm"));
@@ -201,11 +182,6 @@ export function AppSettingsDialog(
         >
           <Tab className={classes.tab} label={t("general")} value="general" />
           <Tab className={classes.tab} label={t("extensions")} value="extensions" />
-          <Tab
-            className={classes.tab}
-            label={t("experimentalFeatures")}
-            value="experimental-features"
-          />
           <Tab className={classes.tab} label={t("about")} value="about" />
         </Tabs>
         <Stack direction="row" fullHeight overflowY="auto">
@@ -222,22 +198,6 @@ export function AppSettingsDialog(
               <LanguageSettings />
               {!isDesktopApp() && <LaunchDefault />}
               {isDesktopApp() && <RosPackagePath />}
-              <Stack>
-                <FormLabel>{t("advanced")}:</FormLabel>
-                <FormControlLabel
-                  className={classes.formControlLabel}
-                  control={
-                    <Checkbox
-                      className={classes.checkbox}
-                      checked={debugModeEnabled}
-                      onChange={(_, checked) => {
-                        void setDebugModeEnabled(checked);
-                      }}
-                    />
-                  }
-                  label={t("debugModeDescription")}
-                />
-              </Stack>
             </Stack>
           </section>
 
