@@ -32,6 +32,7 @@ jobs:
         yarn build:packages
         yarn clean || true
         yarn web:build:prod
+        node node_modules/electron/install.js
         yarn test
         yarn storybook:build
         yarn desktop:build:prod
