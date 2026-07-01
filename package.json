@@ -70,7 +70,7 @@
     "@actions/core": "1.11.1",
     "@actions/exec": "1.1.1",
     "@actions/tool-cache": "2.0.2",
-    "@babel/core": "7.28.5",
+    "@babel/core": "7.29.6",
     "@babel/plugin-proposal-explicit-resource-management": "7.27.4",
     "@babel/preset-env": "7.28.5",
     "@babel/preset-typescript": "7.28.5",
@@ -123,7 +123,7 @@
     "typescript": "5.2.2",
     "webpack": "5.88.2",
     "webpack-cli": "6.0.1",
-    "webpack-dev-server": "5.2.2",
+    "webpack-dev-server": "5.2.5",
     "webpack-hot-middleware": "2.26.1"
   }
 }
