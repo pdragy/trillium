@@ -22,6 +22,6 @@
     "react-dom": "18.2.0",
     "tss-react": "4.9.2",
     "webpack": "5.88.2",
-    "webpack-dev-server": "5.2.6"
+    "webpack-dev-server": "6.0.0"
   }
 }
